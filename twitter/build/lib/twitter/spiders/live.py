@@ -5,14 +5,14 @@ import json
 from twitter.items import TwitterItem
 import lxml
 
-class BasicSpider(scrapy.Spider):
+class LiveSpider(scrapy.Spider):
    
-    name = "basic"
+    name = "live"
     
     #Initiator allows to use paramters in command line call
     def __init__(self, term , total_results=20, *args,**kwargs ):
         
-        super(BasicSpider, self).__init__(*args, **kwargs)                
+        super(LiveSpider, self).__init__(*args, **kwargs)                
         
         term = term.replace(" ","")       
         
@@ -35,7 +35,7 @@ class BasicSpider(scrapy.Spider):
     def parse(self, response):
         
         #The response is a json file
-        jsonresponse=json.loads(response.text)
+        jsonresponse=json.loads(response.content)
                 
         
         #HTML page code is in "items_html" key        
