@@ -42,4 +42,3 @@ Include spyder for:
 * Photos - *Pending*
 * News - *Pending*
 * Videos - *Pending*
-* News - *Pending*
